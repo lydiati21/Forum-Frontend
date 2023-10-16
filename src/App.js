@@ -21,9 +21,12 @@ function App() {
       token = "";
     } else {
       // if auth exist then verify token and get user info
-      const userRes = await axios.get("http://localhost:4000/api/users", {
-        headers: { "x-auth-token": token },
-      });
+      const userRes = await axios.get(
+        `${process.env.REACT_APP_base_url}/api/users`,
+        {
+          headers: { "x-auth-token": token },
+        }
+      );
 
       //set the global state with user info
       setUserData({
