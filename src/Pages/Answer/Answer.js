@@ -16,7 +16,7 @@ function Answer() {
   let qid = searchparams.get("id");
   useEffect(() => {
     async function fetchData() {
-      const request = await axios.post("/question/qid", {
+      const request = await axios.post( `${process.env.REACT_APP_base_url}/question/qid`, {
         qid: qid,
       });
       // console.log(request);
@@ -30,13 +30,13 @@ function Answer() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  console.log(form);
+  // console.log(form);
 
   const handleSubmit = async (e) => {
   e.preventDefault();
     try {
   
-      const questionAddRes = await axios.post("/answer/add", {
+      const questionAddRes = await axios.post( `${process.env.REACT_APP_base_url}/answer/add`, {
         answer: form.answer,
         answer_code_block: "...",
     user_id: userData.user.id,
@@ -52,10 +52,10 @@ function Answer() {
 
   useEffect(() => {
     async function fetchData() {
-      const request = await axios.post("/answer/qid", {
+      const request = await axios.post( `${process.env.REACT_APP_base_url}/answer/qid`, {
         qid: qid,
       });
-      // console.log(request)
+    
       setAllAnswers(request.data.data);
       return request;
     }

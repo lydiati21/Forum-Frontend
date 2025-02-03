@@ -17,12 +17,15 @@ function SignUp() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/users", form);
+      await axios.post( `${process.env.REACT_APP_base_url}/users`, form);
 
-      const loginRes = await axios.post("users/login", {
-        email: form.email,
-        password: form.password,
-      });
+      const loginRes = await axios.post(
+        `${process.env.REACT_APP_base_url}users/login`,
+        {
+          email: form.email,
+          password: form.password,
+        }
+      );
 
       setUserData({
         token: loginRes.data.token,
