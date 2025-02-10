@@ -17,7 +17,7 @@ function Home() {
 
   useEffect(() => {
     async function fetchData() {
-      const request = await axios.get( `${process.env.REACT_APP_base_url}/question/all`);
+      const request = await axios.get("/question/all`");
       // console.log(request)
       setAllQuestions(request.data.data);
       return request;

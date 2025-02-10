@@ -17,11 +17,9 @@ function SignUp() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post( `${process.env.REACT_APP_base_url}/users`, form);
+      await axios.post("/users", form);
 
-      const loginRes = await axios.post(
-        `${process.env.REACT_APP_base_url}users/login`,
-        {
+      const loginRes = await axios.post("users/login",{
           email: form.email,
           password: form.password,
         }

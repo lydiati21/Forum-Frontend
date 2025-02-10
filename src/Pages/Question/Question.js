@@ -17,7 +17,7 @@ function Question() {
     e.preventDefault();
     try {
    
-      const questionAddRes = await axios.post(`${process.env.REACT_APP_base_url}/question/add`, {
+      const questionAddRes = await axios.post("/question/add", {
         question: form.title,
         question_description: form.question,
         question_code_block: "....",

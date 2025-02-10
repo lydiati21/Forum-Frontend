@@ -21,8 +21,7 @@ function App() {
       token = "";
     } else {
       // if auth exist then verify token and get user info
-      const userRes = await axios.get(
-        `${process.env.REACT_APP_base_url}/api/users`,
+      const userRes = await axios.get("/api/users",
         {
           headers: { "x-auth-token": token },
         }

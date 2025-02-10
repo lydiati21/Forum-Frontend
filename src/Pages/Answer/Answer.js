@@ -16,7 +16,7 @@ function Answer() {
   let qid = searchparams.get("id");
   useEffect(() => {
     async function fetchData() {
-      const request = await axios.post( `${process.env.REACT_APP_base_url}/question/qid`, {
+      const request = await axios.post("/question/qid", {
         qid: qid,
       });
       // console.log(request);
@@ -36,7 +36,7 @@ function Answer() {
   e.preventDefault();
     try {
   
-      const questionAddRes = await axios.post( `${process.env.REACT_APP_base_url}/answer/add`, {
+      const questionAddRes = await axios.post("/answer/add", {
         answer: form.answer,
         answer_code_block: "...",
     user_id: userData.user.id,
@@ -52,7 +52,7 @@ function Answer() {
 
   useEffect(() => {
     async function fetchData() {
-      const request = await axios.post( `${process.env.REACT_APP_base_url}/answer/qid`, {
+      const request = await axios.post("/answer/qid", {
         qid: qid,
       });
     
