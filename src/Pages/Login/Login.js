@@ -17,10 +17,13 @@ function Login() {
     e.preventDefault();
     try {
     
-      const loginRes = await axios.post("/users/login", {
-        email: form.email,
-        password: form.password,
-      });
+      const loginRes = await axios.post(
+        "https://forum-backend-izp5.onrender.com/api/users/login",
+        {
+          email: form.email,
+          password: form.password,
+        }
+      );
 
      
       setUserData({

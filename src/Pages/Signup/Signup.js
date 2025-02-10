@@ -19,7 +19,9 @@ function SignUp() {
     try {
       await axios.post("/users", form);
 
-      const loginRes = await axios.post("users/login",{
+      const loginRes = await axios.post(
+        "https://forum-backend-izp5.onrender.com/api/users/register",
+        {
           email: form.email,
           password: form.password,
         }
