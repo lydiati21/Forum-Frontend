@@ -15,7 +15,7 @@ function App() {
   const [userData, setUserData] = useUserContext();
 
   const checkLoggedIn = async () => {
-    let token = localStorage.getItem("auth-token");
+    let token = localStorage.getItem("auth-token")
     if (!token) {
       localStorage.setItem("auth-token", "");
       token = "";
