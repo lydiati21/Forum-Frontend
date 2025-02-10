@@ -36,7 +36,7 @@ function SignUp() {
 
       navigate("/");
     } catch (err) {
-      console.log("problem ==>", err.response.data.msg);
+      // console.log("problem ==>", err.response.data.msg);
       alert(err.response.data.msg);
     }
   };
